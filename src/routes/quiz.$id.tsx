@@ -55,7 +55,7 @@ function QuizPage() {
     if (idx + 1 >= quiz.questions.length) return setStage("done");
     setIdx(idx + 1); setTime(quiz.timePerQuestion);
   };
-  const score = answers.filter((a, i) => a === quiz.questions[i].answer).length;
+  const score = answers.filter((a, i) => a === quiz.questions[i]?.answer).length;
   const pct = Math.round((score / quiz.questions.length) * 100);
 
   return (
